@@ -5,26 +5,22 @@ def cc(change)
 
 	while change >= 25 do 
 		coins[:quarter] = change/25
-		change -= 25
-		
+		change = change % 25
 	end
 
 	while change >= 10 do 
 		coins[:dime] = change/10
-		change -= 10
-		
+		change = change % 10
 	end
 
 	while change >=5 do 
 		coins[:nickel] = change/5
-		change -= 5
-		
+		change = change % 5
 	end
 
 	while change >=1 do
 		coins[:penny] = change/1
-		change -= 1
-		
+		change = change % 1
 	end
 
  
