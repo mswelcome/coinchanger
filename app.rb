@@ -2,6 +2,7 @@
 
 require "sinatra"
 require_relative "mcc.rb"
+enable :sessions
 
 get '/' do
 	msg = params[:msg] || ""
@@ -48,8 +49,8 @@ post '/p_coin' do
 	fn = params[:fn]
 	ln = params[:ln]
 	change = params[:change]
-	coins = cc(change.to_i)
-	redirect '/results?fn=' + fn + '&ln=' + ln + '&change=' + change + '&coins=' + coins
+	session[:coins] = cc(change.to_i)
+	redirect '/results?fn=' + fn + '&ln=' + ln + '&change=' + change
 end
 
 get '/results' do
@@ -57,7 +58,7 @@ get '/results' do
 	ln = params[:ln]
 	change = params[:change]
 	coins = params[:coins]
-	erb :results, locals: {fn: fn, ln: ln, change: change, coins: coins}
+	erb :results, locals: {fn: fn, ln: ln, change: change, coins: session[:coins]}
 end
 
 post '/p_results' do

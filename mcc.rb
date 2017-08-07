@@ -2,6 +2,7 @@
 
 def cc(change)
 	coins = {quarter: 0, dime: 0, nickel: 0, penny: 0}
+	
 
 	while change >= 25 do 
 		coins[:quarter] = change/25
@@ -23,29 +24,30 @@ def cc(change)
 		change = change % 1
 	end
 
+ 	
  	if coins[:quarter] > 1
-		qua = coins[:quarter]
-		coins.delete(:quarter)
-		coins[:quarters] = qua
-	end
+ 		coins[:quarters] = coins.delete(:quarter)
+ 	else 
+ 		coins[:quarter] = coins.delete(:quarter)
+ 	end
+
 
 	if coins[:dime] > 1
-		dim = coins[:dime]
-		coins.delete(:dime)
-		coins[:dimes] = dim
+		coins[:dimes] = coins.delete(:dime)
+	else 
+		coins[:dime] = coins.delete(:dime)
 	end
 
-	if coins[:nickel] > 1
-		nic = coins[:nickel]
-		coins.delete(:nickel)
-		coins[:nickel] = nic
+	if coins[:nickel] == 1
+		coins[:nickel] = coins.delete(:nickel)
 	end
 
 	if coins[:penny] > 1
-		pen = coins[:penny]
-		coins.delete(:penny)
-		coins[:pennies] = pen
+		coins[:pennies] = coins.delete(:penny)
+	else 
+		coins[:penny] = coins.delete(:penny)
 	end
+
 
 
 	coins.each do |key,value|
@@ -54,8 +56,12 @@ def cc(change)
 		end
 	end
 
-	coins.to_a.flatten.join(" ")
+	#coins.each do |key, value|
+	#	coins[:key] 
 
+	coins # .to_a.flatten.join(" ")
+	#coins.to_a.reverse.to_h
  	
 
 end
+

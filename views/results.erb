@@ -1,4 +1,8 @@
-<h1> <%=fn%> <%=ln%> your coins are <%=coins%> from your total change <%=change%></h1>
+<h1> <%=fn%> <%=ln%> your coins are from your total change 
+<%coins.each do |key, value|%> 
+	<%=value%> <%=key%>,
+<%end%>
+from <%=change%></h1>
 
 <form = method="post" type action = "p_results">
 	<input type = "submit" value = "Try Again">
