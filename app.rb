@@ -63,5 +63,5 @@ end
 post '/p_results' do
 	fn = params[:fn]
 	ln = params[:ln]
-	redirect '/coin?fn=' + fn = '&ln=' + ln
+	redirect '/coin?fn=' + fn = '&ln=' + ln 
 end

@@ -12,11 +12,12 @@
 	text-align: left;
 }
 
-header {
+head {
 	border-style: solid;
 	border-width: 10px;
+	border-color: red;
 	color: red;
-	width: 99%;
+	width: 100%;
 
 
 }
@@ -68,7 +69,6 @@ footer {
 	border-color: red;
 	height: 5%;
 	width: 99%;
-	margin-top: 10%;
 	background-color: black;
 }
 
@@ -76,3 +76,4 @@ footer a {
 	color: red;
 	font-size: 1.5rem;
 }
+
