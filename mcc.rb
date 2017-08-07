@@ -23,7 +23,39 @@ def cc(change)
 		change = change % 1
 	end
 
- 
-	coins
+ 	if coins[:quarter] > 1
+		qua = coins[:quarter]
+		coins.delete(:quarter)
+		coins[:quarters] = qua
+	end
+
+	if coins[:dime] > 1
+		dim = coins[:dime]
+		coins.delete(:dime)
+		coins[:dimes] = dim
+	end
+
+	if coins[:nickel] > 1
+		nic = coins[:nickel]
+		coins.delete(:nickel)
+		coins[:nickel] = nic
+	end
+
+	if coins[:penny] > 1
+		pen = coins[:penny]
+		coins.delete(:penny)
+		coins[:pennies] = pen
+	end
+
+
+	coins.each do |key,value|
+		if value.to_i == 0
+			coins.delete(key)
+		end
+	end
+
+	coins.to_a.flatten.join(" ")
+
+ 	
 
 end
