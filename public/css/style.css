@@ -1,28 +1,20 @@
-.color {
+.title {
 	color: red;
-	background-color: black;
-}
-
-.size {
-	font-size: 4rem;
-	text-decoration: underline;
-}
-
-.left {
 	text-align: left;
+	text-decoration: underline;
+	background-color: black;
+	font-size: 4rem;
+
 }
-
-head {
-	border-style: solid;
-	border-width: 10px;
+div {
+	background-color: black;
+	border: solid;
 	border-color: red;
-	color: red;
-	width: 100%;
-
-
+	
 }
 
 ul {
+	background-color: black;
 	text-align: right;
 	font-size: 1.5rem;
 }
@@ -47,9 +39,7 @@ li a:active {
 	color: white;
 }
 
-h1 {
-	text-decoration: underline;
-}
+
 
 body {
 	
@@ -60,6 +50,10 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	
+}
+
+h1 {
+	text-decoration: : underline;
 }
 
 footer {
