@@ -50,7 +50,8 @@ post '/p_coin' do
 	ln = params[:ln]
 	change = params[:change]
 	session[:coins] = cc(change.to_i)
-	redirect '/results?fn=' + fn + '&ln=' + ln + '&change=' + change
+	date = params[:date]
+	redirect '/results?fn=' + fn + '&ln=' + ln + '&change=' + change + '&date=' + date
 end
 
 get '/results' do
@@ -58,11 +59,13 @@ get '/results' do
 	ln = params[:ln]
 	change = params[:change]
 	coins = params[:coins]
-	erb :results, locals: {fn: fn, ln: ln, change: change, coins: session[:coins]}
+	date = params[:date]
+	erb :results, locals: {fn: fn, ln: ln, change: change, coins: session[:coins], date: date}
 end
 
 post '/p_results' do
 	fn = params[:fn]
 	ln = params[:ln]
-	redirect '/coin?fn=' + fn = '&ln=' + ln 
+	date = params[:date]
+	redirect '/coin?fn=' + fn = '&ln=' + ln + '&date=' + date 
 end

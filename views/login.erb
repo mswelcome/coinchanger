@@ -1,20 +1,26 @@
+<! DOCTYPE html>
+<html>
+<head>
+
 <script>
-new Date()
-alert(Date());
+var d = new Date();
 
-document.getElementById("demo").innerHTML = Date;
+window.alert(d);
+</script>
 
-</script>	
-
-
+</head>
 
 
+<body>
 <%=msg%>
 <h1> Please Enter your username and password: </h1>
-<p id = "demo">  </p>
+
+
 
 <form method = "post" action = "p_login">
 	<input type = "text" name = "un" required>
 	<input type = "password" name = "pw" required>
 	<input type = "submit" value = "Submit">
-</form>	
+</form>
+</body>
+</html>

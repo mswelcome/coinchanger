@@ -1,9 +1,34 @@
+<head>
+
+<script>
+
+var d = new Date();
+
+alert(d);
+
+function dt() {
+	
+	
+	document.getElementById('dandt').value = d;
+	
+}
+
+</script>
+
+</head>
+
+<body>
 <h1> <%=fn%> <%=ln%> how much change do you have? </h1>
+
+<p></p>
+
+
 
 <form method = "post" action = "p_coin">
 	<input type = "text" name = "change" required>
-	<input type = "submit" value = "Submit">
+	<input type = "submit" value = "Submit" onclick='dt()'></button>
 	<input type = "hidden" name = "fn" value = "<%=fn%>">
 	<input type = "hidden" name = "ln" value = "<%=ln%>">
+	<input id='dandt' type = "hidden" name = "date">
 </form> 
-
+</body>

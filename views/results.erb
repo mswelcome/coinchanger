@@ -1,11 +1,25 @@
-<h1> <%=fn%> <%=ln%> your coins are from your total change 
-<%coins.each do |key, value|%> 
-	<%=value%> <%=key%>,
-<%end%>
-from <%=change%></h1>
+<head>
 
-<form = method="post" type action = "p_results">
-	<input type = "submit" value = "Try Again">
-	<input type = "hidden" name = "fn" value = "<%=fn%>">
-	<input type = "hidden" name = "ln" value = "<%=ln%>">
-</form>
+
+</head>
+
+<body>
+	<h1> <%=fn%> <%=ln%> your coins are from your total change 
+		<%coins.each do |key, value|%> 
+			<%=value%> <%=key%>,
+		<%end%>
+	from <%=change%></h1>
+
+	<p> <%=date%> </p>
+
+
+
+	
+
+	<form = method="post" type action = "p_results">
+		<input type = "submit" value = "Try Again">
+		<input type = "hidden" name = "fn" value = "<%=fn%>">
+		<input type = "hidden" name = "ln" value = "<%=ln%>">
+		<input id='dandt' type = "hidden" name = "date" value= "<%=date%>">
+	</form>
+</body>
